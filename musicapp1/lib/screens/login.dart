@@ -4,6 +4,8 @@ import '../widgets/rounded_button.dart';
 import 'create_account_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _LoginScreenState();
@@ -59,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget pageTitle() {
-    return Container(
+    return SizedBox(
       height: _deviceHeight * 0.10,
       child: Text(
         'WELCOME BACK',
@@ -73,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _loginForm() {
-    return Container(
+    return SizedBox(
         height: _deviceHeight * 0.18,
         child: Form(
             key: _loginFormKey,
@@ -83,13 +85,13 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CustomTextFormFields(
-                    onSaved: (_value) {},
+                    onSaved: (value) {},
                     regEx:
                         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
                     hintText: "email",
                     obscureText: false),
                 CustomTextFormFields(
-                    onSaved: (_value) {},
+                    onSaved: (value) {},
                     regEx: r",{8,}",
                     hintText: "Password",
                     obscureText: true),
